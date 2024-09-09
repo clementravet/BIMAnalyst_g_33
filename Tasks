@@ -1,6 +1,6 @@
 First scripts:
 - Ventilation:
-  Are there ducts? --> if yes; mecanic ventilation  
+  Are there any ducts? --> if yes; mecanic ventilation  
   How long and diameter? 
   Is there heating recovery?
 
@@ -16,5 +16,4 @@ First scripts:
 
 
 If we want to go further:
-- Windows --> U-value
-- Insulation --> materials
+- U-value -- > insulation and materials 
