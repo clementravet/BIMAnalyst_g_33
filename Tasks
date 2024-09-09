@@ -1,7 +1,8 @@
 First scripts:
 - Ventilation:
-  Are there pipes? --> How long, diameter
-  System? --> How it works?
+  Are there ducts? --> if yes; mecanic ventilation  
+  How long and diameter? 
+  Is there heating recovery?
 
 - Electricity:
   Lights? (how many?) --> Voltage, number, power
