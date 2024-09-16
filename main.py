@@ -1,12 +1,12 @@
 import ifcopenshell
 
-from .rules import windowRule
+from .rules import pipeRule
 from .rules import doorRule
 
 model = ifcopenshell.open("path/to/ifcfile.ifc")
 
-windowResult = windowRule.checkRule(model)
+pipeResult = pipeRule.checkRule(ifc)
 doorResult = doorRule.checkRule(model)
 
-print("Window result:", windowResult)
+print("Pipe result:", pipeResult)
 print("Door result:", doorResult)
