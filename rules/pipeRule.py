@@ -1,9 +1,8 @@
 import ifcopenshell
 
-def checkRule(model):
-    windows = model.by_type('IfcWindow')
+def checkRule(ifc):
+    pipes = ifc.by_type('IfcPipeSegment')
 
-    result = f"Windows: {len(windows)}"
+    result = f"Number of pipes: {len(pipes)}"
 
     return result
-
