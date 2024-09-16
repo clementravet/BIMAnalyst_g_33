@@ -6,6 +6,6 @@ def checkRule(model):
     MechanicalVentilation2 = MechanicalVentilation[1]
 
     # Number of elements for the mechanical ventilation
-    result = f"The first mechanical ventilation is {len(MechanicalVentilation1.Name)} and the second one is {len(MechanicalVentilation2.Name)}"
+    result = f"The first mechanical ventilation is {MechanicalVentilation1.Name} and the second one is {MechanicalVentilation2.Name}"
 
     return result
