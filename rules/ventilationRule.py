@@ -1,9 +1,10 @@
 import ifcopenshell
 
 def checkRule(model):
-    doors = model.by_type('IfcDoor')
-
-    result = f"Doors: {len(doors)}"
+    MechanicalVentilation = model.by_type("IfcBuildingElementProxy")
+    
+    # Number of elements for the mechanical ventilation
+    result = f"There are {len(MechanicalVentilation)} mechanical ventilation systems"
 
     return result
 
