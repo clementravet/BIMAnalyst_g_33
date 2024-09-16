@@ -1,12 +1,15 @@
 import ifcopenshell
 
-from .rules import windowRule
-from .rules import doorRule
+from .rules import pipeRule
+from .rules import ventilationNameRule
+from .rules import ventilationRule
 
 model = ifcopenshell.open("path/to/ifcfile.ifc")
 
-windowResult = windowRule.checkRule(model)
-doorResult = doorRule.checkRule(model)
+pipeResult = pipeRule.checkRule(model)
+ventilationNameResult = ventilationNameRule.checkRule(model)
+ventilationResult = ventilationRule.checkRule(model)
 
-print("Window result:", windowResult)
-print("Door result:", doorResult)
+print("Pipe result:", pipeResult)
+print("Ventilation Name result:", ventilationNameResult)
+print("Ventilation result:", ventilationResult)
