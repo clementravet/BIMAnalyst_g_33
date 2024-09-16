@@ -1,5 +1,5 @@
 # BIManalyst group 33
-Focus area: Sustainability - Consumption of Operation (Ventilation)
+Focus area: Sustainability - Consumption of Operation (Only ventilation)
 
 Claim check: The building is ventilated with balanced mechanical ventilation 
 
