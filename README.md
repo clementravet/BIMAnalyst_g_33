@@ -11,4 +11,5 @@ Description of the script:
 The script locates if there is any aggregates in the model and gives the number of aggregates if there is any. If it gives a number it means the claim is correct :-) 
 
 The script (rule): ventilationNameRule.py 
-Gives information about each aggregate 
+
+Description: Gives information about each aggregate 
