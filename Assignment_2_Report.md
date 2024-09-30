@@ -5,7 +5,6 @@ Our group is composed of 3 students who are more or less familiar with coding in
 - Eidur: 2 Neutral
 - Clément: 3 Agree
 
-  
 Our group’s focus is Materials. We are a group of analysts. We decided to work on a label that allows us to assess the environmental aspect of a building through the materials that compose it. That’s why we will focus on the DGNB Certification System.
 
 
@@ -28,7 +27,7 @@ TEC4.4 – Quality of the building envelope (C) Points total: 50pts
 - Lv1: Average Uvalue of exterior wall < min. Building Regulation requirement 20pts
 - Lv2: Average Uvalue of exterior wall < 15% of min. Building Regulation requirement 30pts
 - Lv3: Average Uvalue of exterior wall < 30% of min. Building Regulation requirement 50pts
-- 
+
 We choosed to focus on this criteria because we think it can be a very useful tool for the future. It can enable to save a lot of time in preparing the report.
 
 
