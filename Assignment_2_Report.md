@@ -1,5 +1,6 @@
 # Introduction
 Our group is composed of 3 students who are more or less familiar with coding in python.
+
 ” I am confident coding in python? ”:
 - Emma: 1 Disagree
 - Eidur: 2 Neutral
