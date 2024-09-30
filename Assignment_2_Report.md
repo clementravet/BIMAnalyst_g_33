@@ -40,7 +40,7 @@ The BIM model that is the closest to ours is the Sustainibility Analysis. Here i
 
 
 ## Tool Idea
-For our own OpenBIM ifcOpenShell Tool in Python, we want
+Want we want to execute from our tool is ,first to identify the exterial-walls of our building. Second we want to see the U-value of the each exterial wall for it selfs and if some information is missing then find out what is missing and calculate the U-value for that perticular wall. Third is gathering all the U-values of all the exterial walls in the building. The fourth and last step is to compare the u-values of the building and the report for last years Advanced building design course.
 
 ## Information Requirements
 
