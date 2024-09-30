@@ -40,7 +40,7 @@ The BIM model that is the closest to ours is the Sustainibility Analysis. Here i
 
 
 ## Tool Idea
-
+For our own OpenBIM ifcOpenShell Tool in Python, we want
 
 ## Information Requirements
 
