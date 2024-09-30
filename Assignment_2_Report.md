@@ -4,7 +4,7 @@ Our group is composed of 3 students who are more or less familiar with coding in
 - Emma: 1 Disagree
 - Eidur: 2 Neutral
 - Clément: 3 Agree
-gfdgfd
+htht
 Our group’s focus is Materials. We are a group of analysts. We decided to work on a label that allows us to assess the environmental aspect of a building through the materials that compose it. That’s why we will focus on the DGNB Certification System.
 
 
