@@ -48,3 +48,9 @@ Want we want to execute from our tool is ,first to identify the exterial-walls o
 ## Software Licence
 
 
+
+## WHAT WE HAVE TO DO NEXT
+Do a new diagram BPMN diagram with the use case (try to do same as cost estimation or energy analysis or sustainability analysis)
+
++ finisht the last 2 points
+
