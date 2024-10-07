@@ -33,7 +33,7 @@ We choosed to focus on this criteria because we think it can be a very useful to
 
 
 ## Use case description
-In order to check the claim, we have to get some data from the BIM model. We will focus on the Architectural BIM Model, but the Structural BIM Model and the MEP BIM Model may be still useful. We will collect data such as the U-value of the exterial-walls when it is possible. If it is not, we can get the thickness of the walls and the material it is made of to calculate the U-value. This claim needs to be checked during the writing of the report. It enables to check if the report and the BIM model have the same data. It will focus on the design phase. The BIM purpose is to analyse and compare the data from the BIM model and the report.
+In order to check the claim, we have to get some data from the BIM model. We will focus on the Architectural BIM Model, but the Structural BIM Model and the MEP BIM Model may be still useful. We will collect data such as the U-value of the exterial-walls when it is possible. If it is not, we can get the thickness of the walls and the material it is made of to calculate the U-value. This claim needs to be checked before the writing of the report. The goal is to check if the project respects the chosen criteria from the DGNB Certification defined at the begining of the project. The BIM purpose is to analyse and compare the data from the BIM model and the report.
 
 The BIM model that is the closest to ours is the Sustainibility Analysis. Here is our BPMN diagram:
 ![Tool_diagram](https://github.com/user-attachments/assets/10904bb3-750a-4953-b893-ad6b3b4a364d)
