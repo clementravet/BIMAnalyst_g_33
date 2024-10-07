@@ -51,8 +51,3 @@ Yes we know how to get in IfcOpenShell, the model type we will be using is " Ifc
 
 
 
-## WHAT WE HAVE TO DO NEXT
-Do a new diagram BPMN diagram with the use case (try to do same as cost estimation or energy analysis or sustainability analysis)
-
-+ finisht the last 2 points
-
