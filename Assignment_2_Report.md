@@ -33,14 +33,14 @@ We choosed to focus on this criteria because we think it can be a very useful to
 
 
 ## Use case description
-In order to check the claim, we have to get some data from the BIM model. We will focus on the Architectural BIM Model, but the Structural BIM Model and the MEP BIM Model may be still useful. We will collect data such as the U-value of the exterial-walls when it is possible. If it is not, we can get the thickness of the walls and the material it is made of to calculate the U-value. This claim needs to be checked before the writing of the report. The goal is to check if the project respects the chosen criteria from the DGNB Certification defined at the begining of the project. The BIM purpose is to analyse and compare the data from the BIM model and the report.
+In order to check the claim, we have to get some data from the BIM model. We will focus on the Architectural BIM Model, but the Structural BIM Model and the MEP BIM Model may be still useful. We will collect data such as the U-value of the exterial-walls when it is possible. If it is not, we can get the thickness of the walls and the material it is made of to calculate the U-value. This claim needs to be checked before the writing of the report. The goal is to check if the project respects the chosen criteria from the DGNB Certification defined at the begining of the project. The BIM purpose is to analyse the data from the BIM model and determine the indicator from the DGNB Certification System.
 
 The BIM model that is the closest to ours is the Sustainibility Analysis. Here is our BPMN diagram:
 ![Tool_diagram](https://github.com/user-attachments/assets/10904bb3-750a-4953-b893-ad6b3b4a364d)
 
 
 ## Tool Idea
-Want we want to execute from our tool is ,first to identify the exterial-walls of our building. Second we want to see the U-value of the each exterial wall for it selfs and if some information is missing then find out what is missing and calculate the U-value for that perticular wall. Third is gathering all the U-values of all the exterial walls in the building. The fourth and last step is to compare the u-values of the building and the report for last years Advanced building design course.
+We want to execute from our tool is ,first to identify the exterial-walls of our building. Second we want to see the U-value of the each exterial wall for it selfs and if some information is missing then find out what is missing and calculate the U-value for that perticular wall. Third is gathering all the U-values of all the exterial walls in the building. The fourth and last step is to compare the u-values of the building and the report for last years Advanced building design course.
 
 ## Information Requirements
 We have two options when it comes to extract the information from the model, we can either extract it straight from the IFC from the external walls information or we can find out the thickness of the wall and the material composition of the wall to calculate the U-value our selfs. 
