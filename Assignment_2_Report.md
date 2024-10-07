@@ -43,7 +43,9 @@ The BIM model that is the closest to ours is the Sustainibility Analysis. Here i
 Want we want to execute from our tool is ,first to identify the exterial-walls of our building. Second we want to see the U-value of the each exterial wall for it selfs and if some information is missing then find out what is missing and calculate the U-value for that perticular wall. Third is gathering all the U-values of all the exterial walls in the building. The fourth and last step is to compare the u-values of the building and the report for last years Advanced building design course.
 
 ## Information Requirements
-
+We have two options when it comes to extract the information from the model, we can either extract it straight from the IFC from the external walls information or we can find out the thickness of the wall and the material composition of the wall to calculate the U-value our selfs. 
+This information is in the model, either the U-value or the thickness and materials
+Yes we know how to get in IfcOpenShell, the model type we will be using is " IfcCurtainWall ". For now we know how to get all the information by util.element.get_psets(wall).
 
 ## Software Licence
 
