@@ -179,6 +179,19 @@ for external_wall in model.by_type("IfcCurtainWall"):
             a = U_value
             print("The U value of the wall is", U_value)
 
+#def find_U_value_walls(x):
+#    L = [0]
+#    for external_wall in x:
+#        properties = ifcopenshell.util.element.get_pset(external_wall, 'Analytical Properties')
+#        if properties != None:
+#            U_value = properties.get('Heat Transfer Coefficient (U)')
+#            for y in L:
+#                if 
+#            if U_value != a:
+#                a = U_value
+#                print("The U value of the wall is", U_value)
+#                print("The wall name is", external_wall.Name)
+
 
 
 ####################################################################################################################################
