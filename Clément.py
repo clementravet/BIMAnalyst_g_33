@@ -169,28 +169,17 @@ Roof_1 = Roofs[0]
 #        U_value = properties.get('Heat Transfer Coefficient (U)')
 #        print("The U value of the wall is", U_value)
 
-for external_wall in model.by_type("IfcCurtainWall"):
-    a = 0
-    print("The wall name is", external_wall.Name)
-    properties = ifcopenshell.util.element.get_pset(external_wall, 'Analytical Properties')
-    if properties != None:
-        U_value = properties.get('Heat Transfer Coefficient (U)')
-        if U_value != a:
-            a = U_value
-            print("The U value of the wall is", U_value)
+def find_U_value_element(x):
+    L = []
+    for element in x:
+        properties = ifcopenshell.util.element.get_pset(element, 'Analytical Properties')
+        if properties != None:
+            U_value = properties.get('Heat Transfer Coefficient (U)')
+            if U_value not in L and U_value != None:
+                L.append(U_value)
+    return L
 
-#def find_U_value_walls(x):
-#    L = [0]
-#    for external_wall in x:
-#        properties = ifcopenshell.util.element.get_pset(external_wall, 'Analytical Properties')
-#        if properties != None:
-#            U_value = properties.get('Heat Transfer Coefficient (U)')
-#            for y in L:
-#                if 
-#            if U_value != a:
-#                a = U_value
-#                print("The U value of the wall is", U_value)
-#                print("The wall name is", external_wall.Name)
+U_value_walls = find_U_value_element(model.by_type("IfcCurtainWall"))
 
 
 
@@ -206,6 +195,8 @@ for external_wall in model.by_type("IfcCurtainWall"):
 #        U_value = properties.get('Heat Transfer Coefficient (U)')
 #        print("The U value of the roof is", U_value)
 
+U_value_roofs = find_U_value_element(model.by_type("IfcRoof"))
+
 
 
 ####################################################################################################################################
@@ -220,6 +211,8 @@ for external_wall in model.by_type("IfcCurtainWall"):
 #        U_value = properties.get('Heat Transfer Coefficient (U)')
 #        print("The U value of the slab is", U_value)
 
+U_value_slabs = find_U_value_element(model.by_type("IfcSlab"))
+
 
 
 ####################################################################################################################################
@@ -232,10 +225,10 @@ U_value_basement_walls_report = 0.18       #0.11*1.7
 U_value_basement_slab_report = 0.21        #0.12*1.7
 
 ## Datas of the BIM Model
-U_value_roof_BIM = ifcopenshell.util.element.get_pset(Roof_1, 'Analytical Properties').get('Heat Transfer Coefficient (U)')*1.7
-U_value_external_walls_BIM = ifcopenshell.util.element.get_pset(Wall_100, 'Analytical Properties').get('Heat Transfer Coefficient (U)')*1.7
+U_value_roof_BIM = U_value_roofs[0]*1.7
+U_value_external_walls_BIM = U_value_walls[0]*1.7
 U_value_basement_walls_BIM = 0
-U_value_basement_slab_BIM = 0
+U_value_basement_slab_BIM = U_value_slabs[1]*1.7
 
 table = [
     ["Roof",            U_value_roof_report,            U_value_roof_BIM], 
