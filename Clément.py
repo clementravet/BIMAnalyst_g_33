@@ -25,23 +25,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ####################################################################################################################################
 #############################################          IMPORT WINDOW          ######################################################
 ####################################################################################################################################
@@ -117,6 +100,7 @@ import ifcopenshell.util.element
 import ifcopenshell.util.pset
 import ifcopenshell.util.selector
 from tabulate import tabulate
+import numpy as np
 
 model = ifcopenshell.open(r"C:\Users\clemr\Desktop\DTU\-----COURSES-----\41934-AdvancedBIM\Assignment 1\CES_BLD_24_06_ARC.ifc")
 
@@ -158,7 +142,7 @@ Roof_1 = Roofs[0]
 
 
 ####################################################################################################################################
-######################################          CODE FOR U_VALUE OF THE WALLS         ##############################################
+##################################          CODE FOR U_VALUE OF THE CURTAIN WALLS         ##########################################
 ####################################################################################################################################
 #for external_wall in model.by_type("IfcCurtainWall"):
 #    print("The wall name is", external_wall.Name)
@@ -179,7 +163,57 @@ def find_U_value_element(x):
                 L.append(U_value)
     return L
 
-U_value_walls = find_U_value_element(model.by_type("IfcCurtainWall"))
+#def find_U_value_element2(x):
+#    A = np.zeros((2,100))
+#    A[0,0] = "Name"
+#    A[1,0] = "U_value"
+#    #A0 = A[1,1:]
+#    m = 0
+#    for element in x:
+#        properties = ifcopenshell.util.element.get_pset(element, 'Analytical Properties')
+#        if properties != None:
+#            U_value = properties.get('Heat Transfer Coefficient (U)')
+#            if U_value not in A[1,1:] and U_value != None:
+#                A[m,0] = element.Name
+#                A[m,1] = U_value
+#                m = m+1
+#    n = 0
+#    while A[n,0] != 0:
+#        n = n+1
+#    return A[:, 0:n]
+
+def find_U_value_element3(x):
+    L = []
+    L1 = []
+    L2 = []
+    L1.append("Name")
+    L2.append("U_value")
+    n = 0
+    for element in x:
+        properties = ifcopenshell.util.element.get_pset(element, 'Analytical Properties')
+        if properties != None:
+            U_value = properties.get('Heat Transfer Coefficient (U)')
+            if U_value not in L2 and U_value != None:
+                L1.append(element.Name)
+                L2.append(U_value)
+                n = n+1
+    L.append(L1)
+    L.append(L2)
+    return L
+
+U_value_curtain_walls = find_U_value_element(model.by_type("IfcCurtainWall"))
+print("The different U_values coming from the IfcCurtainWall are :", U_value_curtain_walls)
+
+U_value_curtain_walls2 = find_U_value_element3(model.by_type("IfcCurtainWall"))
+print("The different U_values coming from the IfcCurtainWall are :", U_value_curtain_walls2)
+
+
+
+####################################################################################################################################
+######################################          CODE FOR U_VALUE OF THE WALLS         ##############################################
+####################################################################################################################################
+U_value_walls = find_U_value_element(model.by_type("IfcWall"))
+print("The different U_values coming from the IfcWall are :", U_value_walls)
 
 
 
@@ -196,6 +230,7 @@ U_value_walls = find_U_value_element(model.by_type("IfcCurtainWall"))
 #        print("The U value of the roof is", U_value)
 
 U_value_roofs = find_U_value_element(model.by_type("IfcRoof"))
+print("The different U_values coming from the IfcRoof are :", U_value_roofs)
 
 
 
@@ -212,6 +247,7 @@ U_value_roofs = find_U_value_element(model.by_type("IfcRoof"))
 #        print("The U value of the slab is", U_value)
 
 U_value_slabs = find_U_value_element(model.by_type("IfcSlab"))
+print("The different U_values coming from the IfcSlab are :", U_value_slabs)
 
 
 
@@ -226,7 +262,7 @@ U_value_basement_slab_report = 0.21        #0.12*1.7
 
 ## Datas of the BIM Model
 U_value_roof_BIM = U_value_roofs[0]*1.7
-U_value_external_walls_BIM = U_value_walls[0]*1.7
+U_value_external_walls_BIM = U_value_curtain_walls[0]*1.7
 U_value_basement_walls_BIM = 0
 U_value_basement_slab_BIM = U_value_slabs[1]*1.7
 
@@ -246,12 +282,34 @@ print(tabulate(table, headers=head, tablefmt="grid"))
 
 
 ####################################################################################################################################
-###############################          DEVELOPMENT OF TOOL TO ANALYSE DGNB CRITERIA         ######################################
+#####################                    DEVELOPMENT OF TOOL TO ANALYSE DGNB CRITERIA                    ###########################
+#####################          TEC4.4 – Quality of the building envelope (C) Points total: 50pts         ###########################
 ####################################################################################################################################
-#min_U_value_requirement = 0.3  #Building Regulation Requirement : minimum requirements for U-value of exterior walls and basement walls towards ground: 0.30W/m²K
-#level1 = min_U_value_requirement
-#level2 = 0.85*min_U_value_requirement
-#level3 = 0.7*min_U_value_requirement
+min_U_value_requirement = 0.3  #Building Regulation Requirement : minimum requirements for U-value of exterior walls and basement walls towards ground: 0.30W/m²K
+level1 = min_U_value_requirement
+level2 = 0.85*min_U_value_requirement
+level3 = 0.7*min_U_value_requirement
 
-#U_value_exterior_walls = 
-#...................
+def DGNB_TEC4_4_score(x):
+    score = 0
+    if x < level3:
+        score = 50
+        return score
+    elif x >= level3 and x < level2:
+        score = 30
+        return score
+    elif x >= level2 and x < level1:
+        score = 20
+        return score
+    else:
+        return score
+
+print(" ")
+print("The DGNB score from the data of the report is", DGNB_TEC4_4_score(U_value_external_walls_report), "points, and the one from the data of the BIM model is", DGNB_TEC4_4_score(U_value_external_walls_BIM), "points")
+print(" ")
+if U_value_external_walls_report == U_value_external_walls_BIM:
+    print("The data from the report and the BIM model can lead to the same result")
+if U_value_external_walls_report != U_value_external_walls_BIM:
+    print("The data from the report and the BIM model lead to a different result")
+
+
