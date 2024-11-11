@@ -184,6 +184,10 @@ def find_U_value_element2(x):
 U_value_curtain_walls = find_U_value_element2(model.by_type("IfcCurtainWall"))
 print("The different U_values coming from the IfcCurtainWall are :", U_value_curtain_walls)
 
+table_curtain_wall = U_value_curtain_walls
+print(tabulate(table_curtain_wall, tablefmt="grid"))
+print(" ")
+
 
 
 ####################################################################################################################################
@@ -191,6 +195,10 @@ print("The different U_values coming from the IfcCurtainWall are :", U_value_cur
 ####################################################################################################################################
 U_value_walls = find_U_value_element2(model.by_type("IfcWall"))
 print("The different U_values coming from the IfcWall are :", U_value_walls)
+
+table_wall = U_value_walls
+print(tabulate(table_wall, tablefmt="grid"))
+print(" ")
 
 
 
@@ -209,6 +217,10 @@ print("The different U_values coming from the IfcWall are :", U_value_walls)
 U_value_roofs = find_U_value_element2(model.by_type("IfcRoof"))
 print("The different U_values coming from the IfcRoof are :", U_value_roofs)
 
+table_roof = U_value_roofs
+print(tabulate(table_roof, tablefmt="grid"))
+print(" ")
+
 
 
 ####################################################################################################################################
@@ -226,6 +238,10 @@ print("The different U_values coming from the IfcRoof are :", U_value_roofs)
 U_value_slabs = find_U_value_element2(model.by_type("IfcSlab"))
 print("The different U_values coming from the IfcSlab are :", U_value_slabs)
 
+table_slab = U_value_slabs
+print(tabulate(table_slab, tablefmt="grid"))
+print(" ")
+
 
 
 ####################################################################################################################################
@@ -241,7 +257,7 @@ U_value_basement_slab_report = 0.21        #0.12*1.7
 U_value_roof_BIM = U_value_roofs[1][1]*1.7
 U_value_external_walls_BIM = U_value_curtain_walls[1][1]*1.7
 U_value_basement_walls_BIM = 0
-U_value_basement_slab_BIM = U_value_slabs[1][2]*1.7
+U_value_basement_slab_BIM = U_value_slabs[1][1]*1.7
 
 table = [
     ["Roof",            U_value_roof_report,            U_value_roof_BIM], 
@@ -254,7 +270,7 @@ table = [
 head = [" ", "Report" , "BIM Model"]
 
 # display table
-print(tabulate(table, headers=head, tablefmt="grid"))
+print(tabulate(table, tablefmt="grid"))
 
 
 
@@ -288,3 +304,4 @@ if U_value_external_walls_report == U_value_external_walls_BIM:
     print("The data from the report and the BIM model can lead to the same result")
 if U_value_external_walls_report != U_value_external_walls_BIM:
     print("The data from the report and the BIM model lead to a different result")
+print("")
