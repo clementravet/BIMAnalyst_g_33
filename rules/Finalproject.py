@@ -32,10 +32,12 @@ def find_U_value_element(x):
     L.append(L2)
     return L
 
-U_value_curtain_walls = find_U_value_element(model.by_type("IfcCurtainWall"))
-print("The different U_values coming from the IfcCurtainWall are :", U_value_curtain_walls)
+def U_value_curtain_walls(ifc):
+    result = find_U_value_element(ifc.by_type("IfcCurtainWall"))
+    return result
+print("The different U_values coming from the IfcCurtainWall are :", U_value_curtain_walls(model))
 
-table_curtain_wall = U_value_curtain_walls
+table_curtain_wall = U_value_curtain_walls(model)
 print(tabulate(table_curtain_wall, tablefmt="grid"))
 print(" ")
 
@@ -44,10 +46,12 @@ print(" ")
 ####################################################################################################################################
 ######################################          CODE FOR U_VALUE OF THE WALLS         ##############################################
 ####################################################################################################################################
-U_value_walls = find_U_value_element(model.by_type("IfcWall"))
-print("The different U_values coming from the IfcWall are :", U_value_walls)
+def U_value_walls(ifc):
+    result = find_U_value_element(ifc.by_type("IfcWall"))
+    return result
+print("The different U_values coming from the IfcWall are :", U_value_walls(model))
 
-table_wall = U_value_walls
+table_wall = U_value_walls(model)
 print(tabulate(table_wall, tablefmt="grid"))
 print(" ")
 
@@ -56,10 +60,12 @@ print(" ")
 ####################################################################################################################################
 #######################################          CODE FOR U_VALUE OF THE ROOF         ##############################################
 ####################################################################################################################################
-U_value_roofs = find_U_value_element(model.by_type("IfcRoof"))
-print("The different U_values coming from the IfcRoof are :", U_value_roofs)
+def U_value_roofs(ifc):
+    result = find_U_value_element(ifc.by_type("IfcRoof"))
+    return result
+print("The different U_values coming from the IfcRoof are :", U_value_roofs(model))
 
-table_roof = U_value_roofs
+table_roof = U_value_roofs(model)
 print(tabulate(table_roof, tablefmt="grid"))
 print(" ")
 
@@ -68,10 +74,12 @@ print(" ")
 ####################################################################################################################################
 #######################################          CODE FOR U_VALUE OF THE SLAB         ##############################################
 ####################################################################################################################################
-U_value_slabs = find_U_value_element(model.by_type("IfcSlab"))
-print("The different U_values coming from the IfcSlab are :", U_value_slabs)
+def U_value_slabs(ifc):
+    result = find_U_value_element(ifc.by_type("IfcSlab"))
+    return result
+print("The different U_values coming from the IfcSlab are :", U_value_slabs(model))
 
-table_slab = U_value_slabs
+table_slab = U_value_slabs(model)
 print(tabulate(table_slab, tablefmt="grid"))
 print(" ")
 
