@@ -1,0 +1,10 @@
+# Assignment 3
+## The Model
+import ifcopenshell
+
+from .rules import pipeRule
+from .rules import ventilationNameRule
+from .rules import ventilationRule
+
+model = ifcopenshell.open("path/to/ifcfile.ifc")
+
