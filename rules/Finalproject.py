@@ -95,10 +95,10 @@ U_value_basement_walls_report = 0.18       #0.11*1.7
 U_value_basement_slab_report = 0.21        #0.12*1.7
 
 ## Datas of the BIM Model
-U_value_roof_BIM = U_value_roofs[1][1]*1.7
-U_value_external_walls_BIM = U_value_curtain_walls[1][1]*1.7
+U_value_roof_BIM = U_value_roofs(model)[1][1]*1.7
+U_value_external_walls_BIM = U_value_curtain_walls(model)[1][1]*1.7
 U_value_basement_walls_BIM = 0
-U_value_basement_slab_BIM = U_value_slabs[1][1]*1.7
+U_value_basement_slab_BIM = U_value_slabs(model)[1][1]*1.7
 
 table = [
     ["Roof",            U_value_roof_report,            U_value_roof_BIM], 
@@ -111,7 +111,25 @@ table = [
 head = [" ", "Report" , "BIM Model"]
 
 # display table
-print(tabulate(table, tablefmt="grid"))
+print(tabulate(table, headers=head, tablefmt="grid"))
+
+def table_report_BIM(ifc):
+    U_value_roof_report = 0.14
+    U_value_external_walls_report = 0.21
+    U_value_basement_walls_report = 0.18
+    U_value_basement_slab_report = 0.21
+    U_value_roof_BIM = U_value_roofs(model)[1][1]*1.7
+    U_value_external_walls_BIM = U_value_curtain_walls(model)[1][1]*1.7
+    U_value_basement_walls_BIM = 0
+    U_value_basement_slab_BIM = U_value_slabs(model)[1][1]*1.7
+    table = [
+    ["Roof",            U_value_roof_report,            U_value_roof_BIM], 
+    ["External walls",  U_value_external_walls_report,  U_value_external_walls_BIM], 
+    ["Basement walls",  U_value_basement_walls_report,  U_value_basement_walls_BIM], 
+    ["Basement slab",   U_value_basement_slab_report,   U_value_basement_slab_BIM]
+    ]
+    head = [" ", "Report" , "BIM Model"]
+    print(tabulate(table, headers=head, tablefmt="grid"))
 
 
 
@@ -125,6 +143,10 @@ level2 = 0.85*min_U_value_requirement
 level3 = 0.7*min_U_value_requirement
 
 def DGNB_TEC4_4_score(x):
+    min_U_value_requirement = 0.3  #Building Regulation Requirement : minimum requirements for U-value of exterior walls and basement walls towards ground: 0.30W/m²K
+    level1 = min_U_value_requirement
+    level2 = 0.85*min_U_value_requirement
+    level3 = 0.7*min_U_value_requirement
     score = 0
     if x < level3:
         score = 50
@@ -146,4 +168,21 @@ if U_value_external_walls_report == U_value_external_walls_BIM:
 if U_value_external_walls_report != U_value_external_walls_BIM:
     print("The data from the report and the BIM model lead to a different result")
 print("")
+
+def Check_DGNB(ifc):
+    min_U_value_requirement = 0.3  #Building Regulation Requirement : minimum requirements for U-value of exterior walls and basement walls towards ground: 0.30W/m²K
+    level1 = min_U_value_requirement
+    level2 = 0.85*min_U_value_requirement
+    level3 = 0.7*min_U_value_requirement
+    U_value_external_walls_report = 0.21
+    U_value_external_walls_BIM = U_value_curtain_walls(ifc)[1][1]*1.7
+    print(" ")
+    print("The DGNB score from the data of the report is", DGNB_TEC4_4_score(U_value_external_walls_report), "points, and the one from the data of the BIM model is", DGNB_TEC4_4_score(U_value_external_walls_BIM), "points")
+    print(" ")
+    if U_value_external_walls_report == U_value_external_walls_BIM:
+        print("The data from the report and the BIM model can lead to the same result")
+    if U_value_external_walls_report != U_value_external_walls_BIM:
+        print("The data from the report and the BIM model lead to a different result")
+    print("")
+
 
