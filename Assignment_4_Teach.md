@@ -33,13 +33,16 @@ This section aims to explain how to take control of the code.
 The only thing to do at this point is to open the main.py and change the path of the ifc file you want to study. It takes place in the 6th line: model = ifcopenshell.open(r"ifcpathfile.ifc"). At this point, you have to copy-paste the path of your ifc file in this line. When you did this, you can now run the code.
 
 
-## UNDERSTAND THE CODE
-
+## OUTPUT OF THE CODE  
+The first output of the code is the different U values of the ifc curtain walls, the ifc walls, the ifc roofs and the ifc slabs, everything is put into table. 
+Then, the code prints a table which contains the U_values of different elements from the report and the BIM model so as to compare them.
+Finally, the last output of the code is the score of the DGNB criteria.
 
 
 ### Note:
 Sometimes, some errors may pop up but they are not important and they do not disturb the result of the tool, you just need to ignore it.
 
-# Summary
-## Extracting U-values from Model
+
+## Summary
+### Extracting U-values from Model
 The functuality of the program is that it extracts U-values from the model, from external walls, the roof and slabs to be exact. After that it compares the U-values to the DGNB lite certification. 
