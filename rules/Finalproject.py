@@ -174,6 +174,7 @@ def DGNB_TEC4_4_score(x):
 #if U_value_external_walls_report != U_value_external_walls_BIM:
 #    print("The data from the report and the BIM model lead to a different result")
 #print("")
+#print("")
 
 def Check_DGNB(ifc):
     min_U_value_requirement = 0.3  #Building Regulation Requirement : minimum requirements for U-value of exterior walls and basement walls towards ground: 0.30W/m²K
