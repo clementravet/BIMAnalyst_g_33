@@ -21,7 +21,17 @@ U-values where coded in IFCCurtainWall and addition to that we calculated the U-
 Our tool is finding the U-value in the external walls of the building which is coded in the IFC model. After that it compares these values and checks if they are the same and if or if not they are by DGNB certification standards.
 
 ### Instructions to run the tool.
-The managers have to change the path to the IFC file
+The managers have to change the path to the IFC file in the main.py. It is the only thing to do.
+
+### How it works
+The file main.py imports the functions in the file Finalproject.py which is located in the folder "rules". Then, the main.py calls the functions and runs them with the model that the user has chosen. 
+
+In the file Finalproject.py, there are different functions:
+- find_U_value _element: it creates a list with . There are as many elements in the list as there are different U_values in the ifc type that has been chosen. The function takes as input an element of type ifc type. The list will contain the name of the element and their U_value.
+- U_value_XXX: it uses the function find_U_value_element for every ifc type we want to study.
+- table_report_BIM: this function takes as input an element of type model. It creates a table with the U_values of roof, external walls, basement walls and basement slabs from the report and the BIM model. The goal is to compare the values from the 2 sources so as to see if it is consistent.
+- DGNB_TEC4_4_score: this function takes as input an element of type string. It calculates the score of the DGNB criteria based on the U_value of the external walls.
+- Check_DGNB: this function takes as input an element of type model. It prints the score of the DGNB criteria and says if the result from the report and the one from the BIM model are the same or not.
 
 ## Advanced Building Design
 ### What Advanced Building Design Stage (A,B,C or D) would your tool be usefuL?
