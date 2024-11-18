@@ -20,7 +20,7 @@ But the tool is mostly relevant for the role of "Analyst Level 2" since its prim
 This section aims to explain how to set up the coding program we need in order to use the tool.
 
 - The first step is to download a coding program for python language. The tool has been made on Visual Studio Code, but every equivalent program may be used to run it. Once this is done, you can launch it.
-- To run the code, you need to install some packgages. You have to write in the console the foloowing code lines:
+- To run the code, you need to install some packgages. You have to write in the console the folowing code lines:
   - pip install --upgrade pip
   - pip install ifcopenshell
   - pip install geometry
