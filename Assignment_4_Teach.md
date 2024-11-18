@@ -1,16 +1,19 @@
 # ASSIGNMENT 4
 Group 33 - Clément, Eiður & Emma
 
-## INTRODUCTION
-The tool is used to determine a criteria of the DGNB lite certification. Our tool is finding the U-value in the external walls of the building which is coded in the IFC model. After that it compares these values and checks if they are the same and if or if not they are by DGNB certification standards.
+## INTRODUCTION - Focus area and BIM use
+With our focus area of "Materials", we have developed a tool, which can be used to ease the DGNB-certification process and determine a criteria of the DGNB lite certification. The DGNB criteria which the tool can be used to determine is: TEC4.4 Quality of the building envelope 
+The tools main purpose is to find the U-value in the external walls of the building, which is coded in the IFC model, and then compare these with the calculated U-values by the MEP engineers. The tool will then calculate whether the correct DGNB-points have been given to the criteria. 
 
-The tool has 2 different goals: it can compare if the results from the BIM model and the report are the same or not, and then determine the DGNB criteria we have chosen.
+Summarized, the tool has 2 different uses: it can compare if the results from the BIM model and the report are the same or not, and then determine which DGNB criteria points is given.
 
-Firstly, the turorial will explain how to get started with the tool and in a second time, it will go through the code.
+Firstly, the turorial will explain how to get started with the tool and secondly, it will go through the code.
 
 
 ## ROLE IDENTIFICATION
-
+Our tool can be used for different purposes with some modification. 
+It is possible for the tool to be used by the role of "Modeller Level 1 and Level 2", as it can be used to check whether the model is modelled correct or that the mapping of the modelled properties is done correctly - here with the U-values as a reference, which can be usefull to check if the layers or materials of walls, slabs, roof etc. is correct.
+BUt the tool is mostæy relevant for the role of "Analyst Level 2" since its primary use to analyse the properties of a standard IFC file and extract the essential properties with Pyhton script.
 
 
 ## HOW TO GET STARTED
