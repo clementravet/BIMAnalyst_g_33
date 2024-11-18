@@ -9,6 +9,10 @@ The tool has 2 different goals: it can compare if the results from the BIM model
 Firstly, the turorial will explain how to get started with the tool and in a second time, it will go through the code.
 
 
+## ROLE IDENTIFICATION
+
+
+
 ## HOW TO GET STARTED
 This section aims to explain how to set up the coding program we need in order to use the tool.
 
@@ -26,8 +30,5 @@ This section aims to explain how to take control of the code.
 The only thing to do at this point is to change the path of the ifc file you want to study. It takes place in the 6th line: model = ifcopenshell.open(r"ifcpathfile.ifc"). At this point, you have to copy-paste the path of your ifc file in this line. When you did this, you can now run the code.
 
 
-
 ### Note:
 Sometimes, some errors may pop up but they are not important and they do not disturb the result of the tool, you just need to ignore it.
-
-
