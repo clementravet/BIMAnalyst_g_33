@@ -4,7 +4,7 @@ Group 33 - Clément, Eiður & Emma
 ## INTRODUCTION
 The tool is used to determine a criteria of the DGNB lite certification. Our tool is finding the U-value in the external walls of the building which is coded in the IFC model. After that it compares these values and checks if they are the same and if or if not they are by DGNB certification standards.
 
-The tool has 2 different goals: it can compare if the results from the BIM model and the report are the same or not, and then determine the DGNB criteria we choosed.
+The tool has 2 different goals: it can compare if the results from the BIM model and the report are the same or not, and then determine the DGNB criteria we have chosen.
 
 Firstly, the turorial will explain how to get started with the tool and in a second time, it will go through the code.
 
