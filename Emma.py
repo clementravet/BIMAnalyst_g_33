@@ -13,7 +13,7 @@
 
 
 
-############################################ U-VALUE FOR EXTERIOR WALL #########################################
+############################################ TEST AT DEN KAN HENTE FIL - VIRKER #########################################
 import ifcopenshell
 
 ifc = ifcopenshell.open(r"C:\Users\Emma\OneDrive - Danmarks Tekniske Universitet\Efterår 24\41639 Advanced Open BIM\Models\CES_BLD_24_06_ARC.ifc")
@@ -32,36 +32,38 @@ print(wall.is_a()) # Returns 'IfcWall'
 ################################################ CHATGPT Script ###########################################################
 
 import ifcopenshell
-import ifcopenshell.util
-import ifcopenshell.util.element
-import ifcopenshell.util.selector
+import ifcopenshell.util.pset
 
 # Indlæs IFC-filen
 ifc_file = ifcopenshell.open(r"C:\Users\Emma\OneDrive - Danmarks Tekniske Universitet\Efterår 24\41639 Advanced Open BIM\Models\CES_BLD_24_06_ARC.ifc")
 
-# Find vægge
-walls = ifc_file.by_type("IfcCurtainWall")
-Wall1 = walls[15]
+# Find vægge (IfcCurtainWall eller IfcWall)
+walls = ifc_file.by_type("IfcWall")  # Ændret til IfcWall for at sikre, at vi får almindelige vægge
+Wall1 = walls[0]  # Tager den første væg
 
 # Få egenskabssæt (psets) fra væggen
 psets = ifcopenshell.util.pset.get_psets(Wall1)
 print(psets)
 
 
-# Gå gennem alle vægge og tjek U-værdi
-for wall in walls:
-    # Hent egenskaberne for væggen
-    for definition in wall.IsDefinedBy:
-        if definition.is_a("IfcRelDefinesByProperties"):
-            property_set = definition.RelatingPropertyDefinition
-            if property_set.is_a("IfcPropertySet"):
-                # Gennemgå alle egenskaber i property set
-                for property in property_set.HasProperties:
-                    if property.is_a("IfcPropertySingleValue"):
-                        # Tjek om egenskaben hedder "U-værdi" eller noget lignende
-                        if property.Name == "U-Value" or property.Name == "Uværdi" or property.Name == "U_value":
-                            u_value = property.NominalValue.wrappedValue
-                            print(f"U-værdi for væg {wall.GlobalId}: {u_value}")
-                            break
-                else:
-                    print(f"Væg {wall.GlobalId} har ingen U-værdi angivet.")
+
+##################################################Clement code#########################################################################
+import ifcopenshell
+import ifcopenshell.util
+import ifcopenshell.util.element
+import ifcopenshell.util.pset
+import ifcopenshell.util.selector
+
+model = ifcopenshell.open(r"C:\Users\Emma\OneDrive - Danmarks Tekniske Universitet\Efterår 24\41639 Advanced Open BIM\Models\CES_BLD_24_06_ARC.ifc")
+
+Wall_all = model.by_type("IfcCurtainWall")
+Wall = model.by_type("IfcCurtainWall")[100]
+
+for external_wall in model.by_type("IfcCurtainWall"):
+    print("The wall name is", external_wall.Name)
+    properties = ifcopenshell.util.element.get_pset(external_wall, 'Analytical Properties')
+    if properties==None:
+        print("This wall does not have an U value")
+    else:
+        U_value = properties.get('Heat Transfer Coefficient (U)')
+        print("The U value of the wall is", U_value)
