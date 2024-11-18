@@ -13,7 +13,7 @@ Firstly, the turorial will explain how to get started with the tool and secondly
 ## ROLE IDENTIFICATION
 Our tool can be used for different purposes with some modification. 
 It is possible for the tool to be used by the role of "Modeller Level 1 and Level 2", as it can be used to check whether the model is modelled correct or that the mapping of the modelled properties is done correctly - here with the U-values as a reference, which can be usefull to check if the layers or materials of walls, slabs, roof etc. is correct.
-But the tool is mostæy relevant for the role of "Analyst Level 2" since its primary use to analyse the properties of a standard IFC file and extract the essential properties with Pyhton script.
+But the tool is mostly relevant for the role of "Analyst Level 2" since its primary use to analyse the properties of a standard IFC file and extract the essential properties with Pyhton script.
 
 
 ## HOW TO GET STARTED
