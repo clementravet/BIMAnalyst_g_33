@@ -46,3 +46,7 @@ Sometimes, some errors may pop up but they are not important and they do not dis
 ## Summary
 ### Extracting U-values from Model
 The functuality of the program is that it extracts U-values from the model, from external walls, the roof and slabs to be exact. After that it compares the U-values to the DGNB lite certification. 
+
+
+## VIDEO TUTORIAL
+Link: 
