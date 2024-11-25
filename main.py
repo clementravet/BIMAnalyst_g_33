@@ -3,7 +3,7 @@ from tabulate import tabulate
 
 from rules import Finalproject
 
-model = ifcopenshell.open(r"C:\Users\clemr\Desktop\DTU\-----COURSES-----\41934-AdvancedBIM\Assignment 1\IFC_file\CES_BLD_24_06_ARC.ifc")
+model = ifcopenshell.open(r"ifcpathfile.ifc")
 
 
 
