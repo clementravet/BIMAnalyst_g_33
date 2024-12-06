@@ -10,16 +10,17 @@ The structure together with the freedom worked out nicely and the tools were goo
 ## Learning experience on the concept we worked on
 ### Clément
 #### Identify your own level at the beginning of this course and where you ended
-
+In the beginning of the course, I knew how to code in Python but I had no knowledge in BIM. At the end of the course, I improved myself in Python and I have now some knowledge in BIM.
 #### What else do you still need to learn?
-
+I still need to learn how to do BIM from scratch.
 #### how you might use OpenBIM in the future?
-
+I think that I might use OpenBIM in the future through tools to extract some data from BIM models to help me writing reports.
 #### are you likely to use OpenBIM tools in your thesis?
-
+I do not really know for now what my thesis will be about so it is complicated to say. But as we can use OpenBIM to do a lot of different things, I might find a way to use it for my thesis. It will depend on which subject I decide to focus on.
 #### are you likely to use OpenBIM tools in your professsional life in the next 10 years?
-
+As I said before, I OpenBIM has a lot of different purposes so I might have the opportunity to use it in the future in my professional life. Indeed, it is possible that I might create tools to extract data from BIM models to be faster to write reports or just do some calculations automaticaly.
 #### conclude the journey through A1-A5
+
 
 
 ### Eiður 
