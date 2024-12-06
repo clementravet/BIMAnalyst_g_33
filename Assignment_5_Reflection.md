@@ -20,7 +20,7 @@ I do not really know for now what my thesis will be about so it is complicated t
 #### are you likely to use OpenBIM tools in your professsional life in the next 10 years?
 As I said before, I OpenBIM has a lot of different purposes so I might have the opportunity to use it in the future in my professional life. Indeed, it is possible that I might create tools to extract data from BIM models to be faster to write reports or just do some calculations automaticaly.
 #### conclude the journey through A1-A5
-
+I am really happy with the work we did with the group. We found a way to work together on a subject we are all interested in. We decided to work on the DGNB certification and we then choosed a criteria based on the U_values. As for me, the BPMN diagram we did well describes the utility of the tool and when it has to be used. The tool in itself is not that complicated but it well does what we wanted at the beginning of the project. We are quite happy with it. It can still be improved by adding lines to export the data in an Excel file for instance. In the tool, we directly use U_values that are given in the psets, we can maybe add lines to calculate the U_values based on the type and the thickness of the material in case we do not have the U_value directly.
 
 
 ### Eiður 
