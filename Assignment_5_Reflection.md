@@ -39,13 +39,15 @@ I'm really happy with my journey throughout the Assignments. The assignment we c
 
 ### Emma
 #### Identify your own level at the beginning of this course and where you ended 
-
+I have no experience in scripting or working with coding, but I have with modelling BIM. I would therefore say I started as a "modeller", but throughout the course I have developed into "BIM Analyst". I now understand how the information in BIM modelles are stored, and how to work with it. I am still not good at coding and scripting, but knowing how to find the information needed the scripting will come.
 #### What else do you still need to learn?
-
+I definately think the overall concept for coding is the biggest challange for me. I think this course would have given me more outcome if I knew the basics of coding beforehand - but having a group where other members where more experienced than me was very helpful.
 #### how you might use OpenBIM in the future?
-
+I definately think OpenBIM is very usefull in many aspects of the building enviroment. Gathering information from the modeles are very useful, and a gives a collective understanding of the building - especially when working with one model of course. The challange I see with using OpenBIM is, that it requires the actual modelling of the building to be highly accurate and information-rich, for it to be truly useful. Also that there are some common guidelines for modelling the model, so you know all modeles contains the required information. 
 #### are you likely to use OpenBIM tools in your thesis?
-
+Since I don’t yet know the exact topic of my thesis, I can’t answer this definitively. However, if my thesis involves gathering information from a model, I would definitely consider using OpenBIM tools.
 #### are you likely to use OpenBIM tools in your professsional life in the next 10 years?
-
+I already use OpenBIM in my current work, particularly for performing LCAs and DGNB certifications. In this context, I use programs like Solibri that work with IFC models. While I don’t write scripts like we have done in this course, I can see myself using such tools more frequently in the future. Personally, as someone without a coding background, I prefer software like Solibri because it allows me to focus on extracting quantities without needing advanced scripting for additional information.
 #### conclude the journey through A1-A5
+For me, the process thoughtout this course have been quite frustating. Having no experirence in coding or scripting, which is the whole core of this course, it is very difficult to make tools that are actually useful. I had great ideas for which tools could be made and be very useful in real-life-scenarios as well, but actually developing the tools and not being able to help alot with the coding-part, the process have been quite frustating at times. I will say, that it is very good having groups. It was great to collaborate with group members who had more experience with scripting, while I contributed with ideas for tools that could be practical in real-life situations. 
+To conclude, the process has been rewarding overall, despite some natural frustrations along the way. I really enjoyed A4(teaching) and it was actually the part, that have given me the most. Teaching our tool to others and seeing the tools developed by others was both inspiring and helpful.
